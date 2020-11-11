@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
+    <v-col cols="12" sm="10" md="10">
       <div class="text-center">
       </div>
       <v-card>
@@ -70,10 +70,22 @@
           </v-btn>
         </v-card-actions>
       </v-card>
-      <nuxt-link to="/by-alphabet">Sort By Alphabet</nuxt-link>
+      <v-tabs> 
+        <v-tab nuxt>
+          <nuxt-link to="/">Sort By Alphabet</nuxt-link>
+        </v-tab>
+        <v-tab nuxt>
+          <nuxt-link to="/by-temperature">Sort By Temperature</nuxt-link>
+        </v-tab>
+        <v-tab nuxt>
+          <nuxt-link to="/by-last-updated">Sort By LastUpdated</nuxt-link>
+        </v-tab>
+      </v-tabs>
+      <NuxtChild :weather="weatherItemsWithTemperatureAndLastUpdated"/>
+      <!-- <nuxt-link to="/by-alphabet">Sort By Alphabet</nuxt-link>
       <nuxt-link to="/by-temperature">Sort By Temperature</nuxt-link>
       <nuxt-link to="/by-last-updated">Sort By LastUpdated</nuxt-link>
-      <NuxtChild :weather="weatherItemsWithTemperatureAndLastUpdated"/>
+      <NuxtChild :weather="weatherItemsWithTemperatureAndLastUpdated"/> -->
     </v-col>
   </v-row>
 </template>

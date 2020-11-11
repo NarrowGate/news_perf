@@ -1,17 +1,16 @@
 <template>
-  <div>Last Updated order
-          <v-subheader>By Last Updated</v-subheader>
-    <wlist v-for="item in sortedByLastUpdated" :item ="item" :key="item._venueID">
-    </wlist>
-  </div>
-  
+    <div>
+            <v-subheader>By Last Updated</v-subheader>
+      <wlist v-for="item in sortedByLastUpdated" :item ="item" :key="item._venueID">
+      </wlist>
+    </div>
 </template>
 
 <script>
     import wlist from '../../components/wlist.vue';
 
     export default {
-            components: {
+      components: {
         wlist
       },
       props: {
@@ -21,7 +20,7 @@
       },
       computed: {
         sortedByLastUpdated() {
-          let sortedData = this.weather.sort((a, b) => parseFloat(a._weatherLastUpdated) - parseFloat(b._weatherLastUpdated));
+          let sortedData = this.weather.sort((a, b) => parseFloat(b._weatherLastUpdated) - parseFloat(a._weatherLastUpdated));
           return sortedData;
         }
       },

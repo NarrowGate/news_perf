@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <v-subheader>By Alphabets</v-subheader>
-    <wlist v-for="item in sortedByAlphabet" :item ="item" :key="item._venueID">
-    </wlist>
-  </div>
+    <div>
+      <v-subheader>By Alphabets</v-subheader>
+      <wlist v-for="item in sortedByAlphabet" :item ="item" :key="item._venueID">
+      </wlist>
+    </div>
 </template>
 
 <script>

@@ -1,9 +1,9 @@
 <template>
-  <div>Temperature order
-      <v-subheader>By Temperature</v-subheader>
-    <wlist v-for="item in sortedByTemperature" :item ="item" :key="item._venueID">
-    </wlist>
-  </div>
+    <div>
+        <v-subheader>By Temperature</v-subheader>
+      <wlist v-for="item in sortedByTemperature" :item ="item" :key="item._venueID">
+      </wlist>
+    </div>
 </template>
 
 <script>
