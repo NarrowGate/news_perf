@@ -72,6 +72,10 @@
           </v-btn>
         </v-card-actions>
       </v-card>
+      <nuxt-link to="/by-alphabet">Sort By Alphabet</nuxt-link>
+      <nuxt-link to="/by-temperature">Sort By Temperature</nuxt-link>
+      <nuxt-link to="/by-last-updated">Sort By LastUpdated</nuxt-link>
+      <NuxtChild />
     </v-col>
   </v-row>
 </template>
