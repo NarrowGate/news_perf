@@ -39,10 +39,22 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    proxy: true
+  },
+
+  proxy: {
+    '/api': {
+      target: 'http://dnu5embx6omws.cloudfront.net',
+      pathRewrite: {
+        '^/api' : '/venues/weather.json'
+        }
+      }
+  },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {

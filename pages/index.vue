@@ -84,6 +84,9 @@ export default {
   components: {
     Logo,
     VuetifyLogo
-  }
+  },
+    created () {
+    this.$axios.get('api').then(res => console.log(res.data));    
+  },
 }
 </script>
