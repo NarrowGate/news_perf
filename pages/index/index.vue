@@ -3,7 +3,13 @@
 </template>
 
 <script>
-    export default {}
+    export default {
+      props: {
+        weather: {
+          type: Object
+        },
+      },
+    }
 </script>
 
 <style>

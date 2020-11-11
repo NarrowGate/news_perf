@@ -2,8 +2,6 @@
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
       <div class="text-center">
-        <logo />
-        <vuetify-logo />
       </div>
       <v-card>
         <v-card-title class="headline">
@@ -75,22 +73,30 @@
       <nuxt-link to="/by-alphabet">Sort By Alphabet</nuxt-link>
       <nuxt-link to="/by-temperature">Sort By Temperature</nuxt-link>
       <nuxt-link to="/by-last-updated">Sort By LastUpdated</nuxt-link>
-      <NuxtChild />
+      <NuxtChild :weather="weatherItemsWithTemperatureAndLastUpdated"/>
     </v-col>
   </v-row>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
+  data() {
+    return {
+      weather: []
+    }
+  },
+  computed: {
+    weatherItemsWithTemperatureAndLastUpdated() {
+      let itemsArrayWithTemperature = this.weather.filter(item => item._weatherTemp && item._weatherLastUpdated)
+      return itemsArrayWithTemperature;
+    }
   },
     created () {
-    this.$axios.get('api').then(res => console.log(res.data));    
+      this.$axios.get('api').then(res => {
+        console.log(res.data);
+        this.weather = res.data.data;
+      });    
   },
 }
 </script>
