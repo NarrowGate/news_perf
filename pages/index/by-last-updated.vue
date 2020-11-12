@@ -12,22 +12,21 @@
     import WList from '../../components/WList.vue';
 
     export default {
-      components: {
-        WList
-      },
-      props: {
-        weather: {
-          type: Array
+
+        components: {
+          WList
+        },
+        props: {
+          weather: {
+            type: Array
+          }
+        },
+        computed: {
+          sortedByLastUpdated() {
+            let sortedData = this.weather.sort((a, b) => parseFloat(b._weatherLastUpdated) - parseFloat(a._weatherLastUpdated));
+            return sortedData;
+          }
         }
-      },
-      computed: {
-        sortedByLastUpdated() {
-          let sortedData = this.weather.sort((a, b) => parseFloat(b._weatherLastUpdated) - parseFloat(a._weatherLastUpdated));
-          return sortedData;
-        }
-      },
+
     }
 </script>
-
-<style>
-</style>

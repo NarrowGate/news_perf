@@ -18,7 +18,7 @@
               </v-row>
               <v-row>
                 <v-col cols="6" sm="4" md="4" 
-                  v-for="country in countryNames" 
+                  v-for="country in countries" 
                   :key="country">
                     <v-checkbox
                       hide-details="true"
@@ -40,7 +40,7 @@
               </v-row>
               <v-row>
                 <v-col cols="6" sm="4" md="4" 
-                  v-for="condition in conditionNames" 
+                  v-for="condition in weatherConditions" 
                   :key="condition">
                     <v-checkbox
                       hide-details="true"
@@ -74,7 +74,6 @@
         data() {
             return {
                 dialog: false,
-                countryNames:null,
                 filter:{
                   country:[],
                   condition: [],
@@ -84,16 +83,11 @@
 
         props: ['countries', 'weatherConditions'],
 
-        created() {
-          this.countryNames = this.countries;
-          this.conditionNames = this.weatherConditions;
-
-        },
-
         methods: {
           filterFn() {
             this.$emit('filterChanged', this.filter);
           }
         }
+        
     }
 </script>

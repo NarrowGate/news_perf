@@ -71,10 +71,13 @@
               country:[],
               condition:[]
             },
+
             lastUpdated:'',
 
             loading: false,
-            isResults: true
+            isResults: true,
+
+            fetchErrorText: 'Data fetch failed'
           }
         },
 
@@ -83,7 +86,7 @@
               this.processData(res.data.data);
               this.weather = this.weatherSource.slice(0);
             }).catch(err => {
-              console.log('Data fetch failed')
+              console.log(this.fetchErrorText)
             }); 
         },
 
@@ -93,10 +96,10 @@
 
             this.loading = true;
 
-            let now = new Date();
-            let todate = now.getDate();
-            let tomonth = now.getMonth()+1;
-            let toyear = now.getFullYear();
+            let now = new Date(),
+                todate = now.getDate(),
+                tomonth = now.getMonth()+1,
+                toyear = now.getFullYear();
             this.lastUpdated = `Last Updated ${ todate }/${ tomonth }/${ toyear }`;
 
             weatherArr.forEach(item => {
@@ -129,7 +132,7 @@
               this.processData(res.data.data);
               this.weather = this.weatherSource.slice(0);
             }).catch(err => {
-              console.log('Data fetch failed')
+              console.log(this.fetchErrorText)
             }); 
           },
 

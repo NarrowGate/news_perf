@@ -1,6 +1,9 @@
 <template>
     <div>
-      <w-list v-for="item in sortedByAlphabet" :item ="item" :key="item._venueID">
+      <w-list 
+        v-for="item in sortedByAlphabet" 
+        :item ="item" 
+        :key="item._venueID">
       </w-list>
     </div>
 </template>

@@ -16,6 +16,7 @@
 
 <script>
     export default {
+
         props: {
             item: {
                 type: Object
@@ -23,13 +24,13 @@
         },
         methods: {
             formatDate(timeStamp) {
-                let timestampInMs = timeStamp * 1000;
-                let todate=new Date(timestampInMs).getDate();
-                let tomonth=new Date(timestampInMs).getMonth()+1;
-                let toyear=new Date(timestampInMs).getFullYear();
-
+                let timestampInMs = timeStamp * 1000,
+                    todate = new Date(timestampInMs).getDate(),
+                    tomonth = new Date(timestampInMs).getMonth()+1,
+                    toyear = new Date(timestampInMs).getFullYear();
                 return `Last Updated ${ todate }/${ tomonth }/${ toyear }`;
             }
         }
+        
     }
 </script>
