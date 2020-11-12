@@ -41,7 +41,7 @@
       </div>
       <div v-if="!isResults">
         </br>
-        <div class="text-center no-results">No results found</div>
+        <div class="text-center no-results">No results found, please alter filter.</div>
         </br>
       </div>  
       <NuxtChild :weather="weather"/>
