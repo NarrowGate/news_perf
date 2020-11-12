@@ -1,17 +1,19 @@
 <template>
     <div>
-            <v-subheader>By Last Updated</v-subheader>
-      <wlist v-for="item in sortedByLastUpdated" :item ="item" :key="item._venueID">
-      </wlist>
+      <w-list 
+        v-for="item in sortedByLastUpdated" 
+        :item ="item" 
+        :key="item._venueID">
+      </w-list>
     </div>
 </template>
 
 <script>
-    import wlist from '../../components/wlist.vue';
+    import WList from '../../components/WList.vue';
 
     export default {
       components: {
-        wlist
+        WList
       },
       props: {
         weather: {
